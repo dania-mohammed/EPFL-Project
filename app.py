@@ -1,6 +1,8 @@
 # Import necessary modules from the Flask framework
+import flask
 from flask import Flask , render_template
 from json_demo import ProgrammingLanguageManager
+from course_manager import get_courses, render_courses_template, search_courses
 
 
 
@@ -56,6 +58,21 @@ def remove():
 # Save the modified data to a new JSON file
    manager.save_data('data/new_programming_language.json')
    return render_template('remove.html',programming_languages=programming_languages)
+
+
+
+# Home page get the courses name 
+# get courses name function from courses.txt
+@app.route("/courses")
+def course():
+    return render_courses_template()
+
+# create a search for courses page
+@app.route("/search")
+def search():
+    query = flask.request.args.get("q")
+    result = search_courses(query)
+    return result
 
 
 

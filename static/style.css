@@ -1,6 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+ 
     }
     h1 {
         font-size: 34px;
@@ -39,3 +40,15 @@ body {
         border: 1px solid #ddd;
         font-family: 'Courier New', Courier, monospace;
     }
+    #forms {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    #course {
+        width: 300px;
+        margin-right: 10px;
+    }
+
+  
