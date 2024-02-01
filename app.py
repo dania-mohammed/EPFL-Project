@@ -74,12 +74,10 @@ def search():
     result = search_courses(query)
     return result
 
+# route to todo list page 
 @app.route("/todo")
 def todo():
     return render_template('todo.html')
-
-
-
 
 # Run the Flask web application in debug mode
 if __name__ == '__main__':

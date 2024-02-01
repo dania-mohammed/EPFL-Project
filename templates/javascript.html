@@ -2,4 +2,58 @@
 {% block title %}{% endblock %}
 
 {% block body %}
+
+<ul>
+    <li>
+        <strong>Todo list</strong>
+        <ul>
+            <li>Get references to HTML elements</li>
+            <code>
+                const inputBox = document.getElementById("input-box");
+                const listContainer = document.getElementById("list-container");
+                const addItem = document.getElementById("addItem");
+            </code>
+            
+            <li> Function to add a task</li>
+            <code>
+                function addTask(){
+                    if(inputBox.value === ''){
+                         alert("You must write something!"); 
+                    }
+                    else{
+                        let li = document.createElement("li"); 
+                        li.innerHTML = inputBox.value;
+                        listContainer.appendChild(li); 
+                        let span = document.createElement("span");
+                        span.innerHTML="\u00d7"; 
+                        li.appendChild(span); 
+                    }
+                    inputBox.value= ""; 
+                    saveData(); 
+                }
+            </code>
+            
+            <li>Add event listener to the list container</li>
+            <code>
+                listContainer.addEventListener("click", function(e){
+                    if(e.target.tagName === "LI"){
+                        e.target.classList.toggle("checked"); // Toggle the "checked" class on the clicked item
+                        saveData();
+            </code>
+
+            <li> Function to save the task list to local storage</li>
+            <code>
+                function saveData(){
+                    localStorage.setItem("data", listContainer.innerHTML);
+                }
+            </code>
+            <strong>Result </strong>
+            <div class="mt-3">
+                <button class="btn btn-primary" onclick="window.location.href='/todo'">Todo list page</button>
+            
+            </div>
+
+          
+        </ul>
+
 {% endblock %}
