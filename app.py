@@ -74,6 +74,10 @@ def search():
     result = search_courses(query)
     return result
 
+@app.route("/todo")
+def todo():
+    return render_template('todo.html')
+
 
 
 

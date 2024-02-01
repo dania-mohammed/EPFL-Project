@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block title %}Todo list{% endblock %}
+<link rel="stylesheet" href="/static/style.css">
+{% block body %}
+<div class="container">
+    <div class="todo-app">
+        <h2>My To Do List</h2>
+    </div>
+    <div class="row">
+        <form>
+        <input type="text" name="" id="input-box" placeholder="Add your text" >
+       
+       </form>
+        <button id="addItem">Add</button>
+    </div>
+    <ul id="list-container">
+        <!-- <li class="checked">Task 1</li>
+        <li>Task 2</li>
+        <li>Task 3</li> -->
+    </ul>
+    
+</div>
+<script src="/static/todo.js"></script>
+{% endblock %}
