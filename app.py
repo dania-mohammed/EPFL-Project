@@ -1,5 +1,6 @@
 # Import necessary modules from the Flask framework
 from flask import Flask , render_template
+from json_demo import ProgrammingLanguageManager
 
 
 
@@ -15,12 +16,47 @@ def Home():
 # Define a route for the "/python" page 
 @app.route("/python")
 def python():
-    return render_template('python.html')
+  
+   # Pass data to the template and render it
+   return render_template('python.html')
 
 # Define a route for the "/javascript" page
 @app.route("/javascript")
 def java_script():
     return render_template('javascript.html')
+
+# Define a route for the "/result" page
+@app.route("/result")
+def result():
+      # Create an instance of ProgrammingLanguageManager
+   manager = ProgrammingLanguageManager('data/programming_language.json')
+
+# Load the data from the JSON file
+   programming_languages =manager.load_data()
+
+# Remove the 'paradigms' key from each language
+#    manager.remove_paradigms()
+
+# Save the modified data to a new JSON file
+   manager.save_data('data/new_programming_language.json')
+   return render_template('result.html',programming_languages=programming_languages)
+
+
+@app.route("/remove")
+def remove():
+      # Create an instance of ProgrammingLanguageManager
+   manager = ProgrammingLanguageManager('data/programming_language.json')
+
+# Load the data from the JSON file
+   programming_languages =manager.load_data()
+
+# Remove the 'paradigms' key from each language
+   manager.remove_paradigms()
+
+# Save the modified data to a new JSON file
+   manager.save_data('data/new_programming_language.json')
+   return render_template('remove.html',programming_languages=programming_languages)
+
 
 
 

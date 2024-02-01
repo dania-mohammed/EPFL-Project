@@ -1,0 +1,60 @@
+{
+    "programmingLanguages": [
+      {
+        "name": "Python",
+        "designer": "Guido van Rossum",
+        "yearReleased": 1991,
+        "paradigms": ["Object-oriented", "Imperative", "Functional"],
+        "typing": "Dynamic",
+        "popularity": {
+          "ranking": 1,
+          "surveyYear": 2022
+        },
+        "features": [
+          "Readable syntax",
+          "Dynamic typing",
+          "Automatic memory management",
+          "Large standard library",
+          "Community-driven"
+        ],
+        "website": "https://www.python.org/"
+      },
+      {
+        "name": "JavaScript",
+        "designer": "Brendan Eich",
+        "yearReleased": 1995,
+        "paradigms": ["Object-oriented", "Imperative", "Functional"],
+        "typing": "Dynamic",
+        "popularity": {
+          "ranking": 2,
+          "surveyYear": 2022
+        },
+        "features": [
+          "Client-side scripting",
+          "Asynchronous programming",
+          "Prototype-based object-oriented",
+          "Wide browser support"
+        ],
+        "website": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+      },
+      {
+        "name": "Java",
+        "designer": "James Gosling",
+        "yearReleased": 1995,
+        "paradigms": ["Object-oriented", "Structured", "Imperative"],
+        "typing": "Static",
+        "popularity": {
+          "ranking": 3,
+          "surveyYear": 2022
+        },
+        "features": [
+          "Platform independence (Write Once, Run Anywhere)",
+          "Object-oriented programming",
+          "Strongly-typed language"
+        ],
+        "website": "https://www.oracle.com/java/"
+      }
+      
+    ]
+  }
+  

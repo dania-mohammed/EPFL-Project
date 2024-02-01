@@ -31,4 +31,11 @@ body {
         text-decoration: line-through;
     }
     
-    
+    code {
+        display: block;
+        background-color: #f4f4f4;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        font-family: 'Courier New', Courier, monospace;
+    }

@@ -4,4 +4,65 @@
 {% block body %}
 <br>
 <h4>Working with JSON Data using the json Module</h4>
+<br>
+
+</head>
+<body>
+
+<ul>
+    <li>
+        <strong>ProgrammingLanguageManager Class</strong>
+        <ul>
+            <li>Constructor</li>
+            <code>
+                def __init__(self, file_path):
+                    self.file_path = file_path
+                    self.data = None
+            </code>
+            
+            <li>Load Data Method</li>
+            <code>
+                def load_data(self):
+                    with open(self.file_path) as f:
+                        self.data = json.load(f)
+                        return self.data['programmingLanguages']
+            </code>
+            
+            <li>Remove Paradigms Method</li>
+            <code>
+                def remove_paradigms(self):
+                    for language in self.data['programmingLanguages']:
+                        del language['paradigms']
+            </code>
+
+            <li>Save Data Method</li>
+            <code>
+                def save_data(self, output_file_path):
+                    with open(output_file_path, 'w') as f:
+                        json.dump(self.data, f, indent=2)
+            </code>
+
+            <li>Programming Languages Property</li>
+            <code>
+                @property
+                def programming_languages(self):
+                    return self.data['programmingLanguages']
+            </code>
+
+            <li>Language Count Property</li>
+            <code>
+                @property
+                def language_count(self):
+                    return len(self.data['programmingLanguages'])
+            </code>
+        </ul>
+        <strong>Result </strong>
+        <div class="mt-3">
+            <button class="btn btn-primary" onclick="window.location.href='/result'">File content</button>
+            <button class="btn btn-danger" onclick="window.location.href='/remove'">Remove the paradigms</button>
+        </div>
+        
+    </li>
+</ul>
+       
 {% endblock %}
